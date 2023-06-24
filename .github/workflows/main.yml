@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: npm install
-        run: echo `ls`
+        run: npm ci
       - name: eslint install
         run: npm init @eslint/config
