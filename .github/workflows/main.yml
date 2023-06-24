@@ -4,10 +4,13 @@ jobs:
   js-linting:
     runs-on: ubuntu-latest
     steps:
-      - name: npm install
-        run: |
-          echo `ls -la`
-          cd ..
-          echo `ls -la`
+      - name: Download files from the current repository
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Install js dependencies
+        run: npm install
       - name: eslint install
         run: npm init @eslint/config
