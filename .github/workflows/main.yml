@@ -1,6 +1,8 @@
 on: push
 
 jobs:
-  steps:
-    name: JS Linter
-    run: echo "starting JS lint"
+  js-linting:
+  
+    steps:
+      name: JS Linter
+      run: echo "starting JS lint"
