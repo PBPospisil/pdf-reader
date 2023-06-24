@@ -4,5 +4,7 @@ jobs:
   js-linting:
     runs-on: ubuntu-latest
     steps:
-      - name: JS Linter
-        run: echo "starting JS lint"
+      - name: npm install
+        run: npm install
+      - name: eslint install
+        run: npm init @eslint/config
