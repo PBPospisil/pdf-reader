@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: npm install
-        run: npm install
+        run: echo pwd
       - name: eslint install
         run: npm init @eslint/config
