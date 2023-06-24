@@ -1,2 +1,4 @@
+on: push
+
 defaults:
   run: echo "starting JS lint"
