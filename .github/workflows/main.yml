@@ -1,4 +1,6 @@
 on: push
 
-defaults:
-  run: echo "starting JS lint"
+jobs:
+  steps:
+    name: JS Linter
+    run: echo "starting JS lint"
