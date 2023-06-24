@@ -10,7 +10,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      -name: change dir
+
+      - name: change dir
         run: cd ./phoenix
       - name: Install js dependencies
         run: npm install
