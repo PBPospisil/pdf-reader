@@ -4,5 +4,6 @@ jobs:
   js-linting:
 
     steps:
+      - uses: uses: ./.github/workflows/main.yml
       - name: JS Linter
       - run: echo "starting JS lint"
