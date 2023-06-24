@@ -2,7 +2,7 @@ on: push
 
 jobs:
   js-linting:
-  
+
     steps:
-      name: JS Linter
-      run: echo "starting JS lint"
+      - name: JS Linter
+      - run: echo "starting JS lint"
