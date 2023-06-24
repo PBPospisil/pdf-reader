@@ -19,5 +19,5 @@ jobs:
 
       - name: Install js dependencies
         run: npm install /home/runner/work/phoenix/phoenix/phoenix
-      - name: eslint install
-        run: npm init @eslint/config
+      - name: lint
+        run: npm run lint
