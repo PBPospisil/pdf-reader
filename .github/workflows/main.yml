@@ -2,7 +2,7 @@ on: push
 
 jobs:
   js-linting:
-
+    runs-on: ubuntu-latest
     steps:
       - name: JS Linter
         run: echo "starting JS lint"
