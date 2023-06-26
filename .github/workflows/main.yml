@@ -19,8 +19,4 @@ jobs:
         run: | 
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix install eslint
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix run lint
-      - if: grep 'reports/lint.html' -e '0 problems' != 0
-        run: |
-          echo "Error encountered during lint job, exiting..."
-          exit 1
-
+          if grep 'reports/lint.html' -e '0 problems' != 0; then echo "Error encountered during lint job, exiting..." exit 1
