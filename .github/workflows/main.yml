@@ -1,7 +1,7 @@
 on: push
 
 jobs:
-  js-linting:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - name: Download files from the current repository
@@ -12,7 +12,7 @@ jobs:
           node-version: "14.x"
       - name: Install js dependencies
         run: npm install /home/runner/work/phoenix/phoenix/phoenix
-      - name: lint
+      - name: Install and run eslint
         run: | 
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix install eslint
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix run lint
