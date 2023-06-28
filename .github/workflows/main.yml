@@ -22,5 +22,5 @@ jobs:
           
       - name: Check for lint errors
         run: |
-          echo `ls`
+          echo `ls phoenix`
           if grep 'reports/lint.html' -e '0 problems' != 0; then echo "Lint errors detected, exiting..." | exit 1; fi
