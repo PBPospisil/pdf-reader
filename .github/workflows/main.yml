@@ -21,4 +21,6 @@ jobs:
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix run lint
           
       - name: Check for lint errors
-        run: if grep 'phoenix/reports/lint.html' -e '0 problems' -ne 0; then echo "Lint errors detected, exiting..."; fi
+        run: |
+          echo `grep 'phoenix/reports/lint.html' -e '0 problems' -ne 0`
+          if grep 'phoenix/reports/lint.html' -e '0 problems' -ne 0; then echo "Lint errors detected, exiting..."; fi
