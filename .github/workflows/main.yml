@@ -19,4 +19,5 @@ jobs:
         run: | 
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix install eslint
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix run lint
-          if grep 'reports/lint.html' -e '0 problems' != 0; then exit 1;
+      - name: Check for lint errors
+          run: if grep 'reports/lint.html' -e '0 problems' != 0; then exit 1;
