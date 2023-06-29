@@ -1,7 +1,7 @@
 on: push
 
 jobs:
-  js-linting:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - name: Download files from the current repository
@@ -10,13 +10,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - name: Change dir
-        run: |
-          cd phoenix
       - name: Install js dependencies
         run: npm install /home/runner/work/phoenix/phoenix/phoenix
-      - name: lint
+      - name: Install and run eslint
         run: | 
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix install eslint
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix run lint
-         
+          
+      - name: Check for lint errors
+        run: |
+          result=$(grep -c 'phoenix/reports/lint.html' -e '0 problems')
+          if [ $result -eq 0 ]; then echo "Lint errors detected, exiting..."; else echo "No lint errors detected."; fi
