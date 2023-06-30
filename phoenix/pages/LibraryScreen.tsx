@@ -1,8 +1,10 @@
 import React from 'react'
 import { View } from 'react-native';
 
-const LibraryView = () => {
+const LibraryScreen = () => {
     return (
         <View></View>
     );
 }
+
+export default LibraryScreen;
