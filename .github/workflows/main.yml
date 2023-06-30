@@ -24,6 +24,7 @@ jobs:
 
   jest:
     runs-on:
+    steps:
       - name: Install jest
         run: |
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix install jest
