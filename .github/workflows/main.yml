@@ -25,6 +25,14 @@ jobs:
   jest:
     runs-on: ubuntu-latest
     steps:
+      - name: Download files from the current repository
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Install js dependencies
+        run: npm install /home/runner/work/phoenix/phoenix/phoenix
       - name: Install jest
         run: |
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix install jest
