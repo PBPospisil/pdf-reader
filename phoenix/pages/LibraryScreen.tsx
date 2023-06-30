@@ -7,3 +7,5 @@ const LibraryScreen = () => {
         <View></View>
     );
 }
+
+export default LibraryScreen;
