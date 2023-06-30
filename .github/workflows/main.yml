@@ -33,6 +33,8 @@ jobs:
           node-version: "14.x"
       - name: Install js dependencies
         run: npm install /home/runner/work/phoenix/phoenix/phoenix
+      - name: Install react test renderer
+        run: npm -prefix /home/runner/work/phoenix/phoenix/phoenix install react-test-renderer
       - name: Install jest
         run: |
           npm --prefix /home/runner/work/phoenix/phoenix/phoenix install jest
