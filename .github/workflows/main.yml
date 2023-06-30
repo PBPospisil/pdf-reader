@@ -21,3 +21,10 @@ jobs:
         run: |
           result=$(grep -c 'phoenix/reports/lint.html' -e '0 problems')
           if [ $result -eq 0 ]; then echo "Lint errors detected, exiting..."; else echo "No lint errors detected."; fi
+
+  jest:
+    runs-on:
+      - name: Install jest
+        run: |
+          npm --prefix /home/runner/work/phoenix/phoenix/phoenix install jest
+          npm --prefix /home/runner/work/phoenix/phoenix/phoenix run test
