@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native'
 
 const Shelf = () => {
     const [books, setBooks] = useState([]);

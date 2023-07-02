@@ -1,11 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
-import { LibraryStyles } from '../ui/styles'
 
-const LibraryScreen = () => {
+const Book = () => {
     return (
         <View></View>
     );
 }
 
-export default LibraryScreen;
+export default Book;
