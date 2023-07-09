@@ -1,7 +1,7 @@
 import React from "react"
 import { View } from "react-native"
 
-export const BookPresenter = () => {
+export const LibraryPresenter = () => {
     return (
         <View></View>
     );
