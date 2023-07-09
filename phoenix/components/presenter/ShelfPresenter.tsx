@@ -1,7 +1,7 @@
 import React from "react"
 import { View, FlatList, Text } from "react-native"
 
-const ShelfPresenter = () => {
+export const ShelfPresenter = () => {
     return (
         <View>
             <FlatList

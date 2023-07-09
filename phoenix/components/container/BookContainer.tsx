@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { View } from 'react-native'
+import { BookPresenter } from '../presenter/BookPresenter';
 
 export type Book = {
     title: string;
@@ -12,6 +13,11 @@ interface BookProps {
     book: Book
 }
 
-export const BookContainer = (props: BookProps) => {
+export const BookContainer = (props: BookProps) =>
+{
     const [book] = useState(props.book)
+
+    return (
+        <BookPresenter></BookPresenter>
+    )
 }
