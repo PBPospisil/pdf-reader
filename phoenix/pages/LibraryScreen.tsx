@@ -1,10 +1,9 @@
 import React from 'react'
-import { View } from 'react-native'
-import { LibraryStyles } from '../ui/styles'
+import { LibraryContainer } from '../components/container/LibraryContainer'
 
 const LibraryScreen = () => {
     return (
-        <View></View>
+        <LibraryContainer></LibraryContainer>
     );
 }
 
