@@ -1,13 +1,20 @@
 import { StyleSheet } from "react-native"
 
 export const LibraryStyles = StyleSheet.create({
-    screen: {
+    container: {
         flex: 1,
-        backgroundColor: '#f0f8ff'
+        flexDirection: 'column',
+        backgroundColor: 'white'
     },
     header: {
+        flex: 1,
         color: 'black',
-        fontSize: 30,
+        fontSize: 16,
         fontWeight: 'bold',
+        alignSelf: 'center',
+        padding: 4
+    },
+    body: {
+        flex: 9
     }
 })
