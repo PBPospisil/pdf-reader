@@ -1,7 +1,7 @@
 import React from "react"
 import { LibraryPresenter } from "../presenter/LibraryPresenter"
 
-const LibraryContainer = () =>
+export const LibraryContainer = () =>
 {
     return (
         <LibraryPresenter></LibraryPresenter>
