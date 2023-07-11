@@ -6,7 +6,7 @@ import { LibraryStyles } from '../ui/styles'
 
 const LibraryScreen = () => {
     return (
-        <View>
+        <View style={LibraryStyles.container}>
             <LibraryHeader></LibraryHeader>
             <LibraryContainer></LibraryContainer>
         </View>
