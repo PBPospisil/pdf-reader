@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import DocumentPicker, { DocumentPickerResponse } from "react-native-document-picker"
 
-export default function handleFileSelection()
+export default function useDocumentPicker()
 {
     const [browsingResponse, setBrowsingResponse] = useState([] as DocumentPickerResponse[])
 
