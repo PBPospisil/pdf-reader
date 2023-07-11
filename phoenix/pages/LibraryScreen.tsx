@@ -1,13 +1,13 @@
 import React from 'react'
 import { LibraryContainer } from '../components/container/LibraryContainer'
-import { LibraryHeader } from '../components/LibraryHeader'
+import { Header } from '../components/Header'
 import { View } from 'react-native'
 import { LibraryStyles } from '../ui/styles'
 
 const LibraryScreen = () => {
     return (
         <View style={LibraryStyles.container}>
-            <LibraryHeader></LibraryHeader>
+            <Header title='Library'></Header>
             <LibraryContainer></LibraryContainer>
         </View>
         
