@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BookView, Book } from '../book/BookView';
+import { Book } from '../book/BookView';
 import { View, FlatList, Text } from "react-native"
 
 type Shelf = {
@@ -8,7 +8,7 @@ type Shelf = {
 }
 
 interface ShelfProps {
-    shelf: Shelf;
+    shelf?: Shelf;
 }
 
 const addBookAction = (book: Book) => {
