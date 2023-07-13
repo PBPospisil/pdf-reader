@@ -11,7 +11,13 @@ import {it} from '@jest/globals';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
+import { BookView } from '../features/book/BookView';
 
-// it('renders correctly', () => {
-//   renderer.create(<App />);
-// });
+it('renders correctly', () => {
+  renderer.create(<BookView book={{
+    title: '',
+    cover: undefined,
+    author: undefined,
+    publicationDate: undefined
+  }} />);
+});
