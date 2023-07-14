@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
-import ShelfReducer from "../features/shelf/ShelfSlice"
+import ShelfReducer from "../src/features/shelf/ShelfSlice"
 
 const store = configureStore({
     reducer: {
