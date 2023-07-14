@@ -19,7 +19,7 @@ jobs:
           
       - name: Check for lint errors
         run: |
-          result=$(grep -c '../reports/lint.html' -e '0 problems')
+          result=$(grep -c 'reports/lint.html' -e '0 problems')
           if [ $result -eq 0 ]; then echo "Lint errors detected, exiting..."; else echo "No lint errors detected."; fi
 
   jest:
