@@ -1,7 +1,7 @@
 import DocumentPicker, { DocumentPickerResponse } from "react-native-document-picker"
 
-export const pickDocument = async () => {
-
+export const pickDocument = async () =>
+{
     const promise = new Promise(async (resolve, reject) => {
         try {
             const res: DocumentPickerResponse[] = await DocumentPicker.pick({
@@ -13,4 +13,9 @@ export const pickDocument = async () => {
         }
     })
     return promise
+}
+
+export function isCancelled(error: unknown)
+{
+    return DocumentPicker.isCancel(error)
 }
