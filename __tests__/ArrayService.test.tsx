@@ -1,5 +1,5 @@
 import 'react-native';
-import { isEmpty } from '../services/ArrayService';
+import { isEmpty } from '../src/services/ArrayService';
 import { expect, test } from '@jest/globals';
 
 // check is empty on empty array
