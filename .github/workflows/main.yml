@@ -11,15 +11,15 @@ jobs:
         with:
           node-version: "14.x"
       - name: Install js dependencies
-        run: npm install /home/runner/work/phoenix/phoenix/phoenix
+        run: npm install /home/runner/work/phoenix/phoenix
       - name: Install and run eslint
         run: | 
-          npm --prefix /home/runner/work/phoenix/phoenix/phoenix install eslint
-          npm --prefix /home/runner/work/phoenix/phoenix/phoenix run lint
+          npm --prefix /home/runner/work/phoenix/phoenix install eslint
+          npm --prefix /home/runner/work/phoenix/phoenix run lint
           
       - name: Check for lint errors
         run: |
-          result=$(grep -c 'phoenix/reports/lint.html' -e '0 problems')
+          result=$(grep -c 'reports/lint.html' -e '0 problems')
           if [ $result -eq 0 ]; then echo "Lint errors detected, exiting..."; else echo "No lint errors detected."; fi
 
   jest:
@@ -32,10 +32,10 @@ jobs:
         with:
           node-version: "14.x"
       - name: Install js dependencies
-        run: npm install /home/runner/work/phoenix/phoenix/phoenix
+        run: npm install /home/runner/work/phoenix/phoenix
       - name: Install react test renderer
-        run: npm -prefix /home/runner/work/phoenix/phoenix/phoenix install react-test-renderer
+        run: npm -prefix /home/runner/work/phoenix/phoenix install react-test-renderer
       - name: Install jest
         run: |
-          npm --prefix /home/runner/work/phoenix/phoenix/phoenix install jest
-          npm --prefix /home/runner/work/phoenix/phoenix/phoenix run test
+          npm --prefix /home/runner/work/phoenix/phoenix install jest
+          npm --prefix /home/runner/work/phoenix/phoenix run test
