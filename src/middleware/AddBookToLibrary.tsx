@@ -1,21 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { browseFile, UNEXPECTED_EXECUTION_FLOW_ERROR } from "../services/FileBrowser"
-import { FileBrowserResponse, isSuccess } from "../model/FileBrowserResponse";
-
-const ADD_BOOK = 'library/book/add'
+import { Routes } from "./routes"
 
 const addBookToLibrary = createAsyncThunk(
-    ADD_BOOK,
+    Routes.AddBook,
     async (_, { dispatch }) => {
-        let response: FileBrowserResponse = await browseFile()
+        dispatch({ type: Routes.FetchFile })
 
-        if(isSuccess(response)) {
-            
-        }
+
     }
 )
-
-
-// add_book 
-// |_browseFile
-//     |_consumeFile
