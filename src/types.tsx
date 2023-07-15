@@ -7,7 +7,7 @@ export type FileCache = {
 }
 
 export type FileBrowserResponse = {
-    response?: DocumentPickerResponse[],
+    documents?: DocumentPickerResponse[],
     error?: unknown
     isCancelled?: Boolean
 }
