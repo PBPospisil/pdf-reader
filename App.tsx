@@ -24,7 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import LibraryScreen from './pages/LibraryScreen';
+import LibraryScreen from './src/pages/LibraryScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
