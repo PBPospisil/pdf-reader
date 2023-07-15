@@ -21,7 +21,7 @@ const fileBrowserSlice = createSlice({
     initialState,
     reducers: {
         addToBuffer(state, { payload }) {
-            state.importBuffer = [...state.importBuffer, payload]
+            state.importBuffer = [...state.importBuffer, ...payload]
         }
     }
 })
