@@ -1,11 +1,5 @@
-import { DocumentPickerResponse } from "react-native-document-picker"
-import { isEmpty } from "../services/ArrayService"
-
-export type FileBrowserResponse = {
-    response?: DocumentPickerResponse[],
-    error?: unknown
-    isCancelled?: Boolean
-}
+import { isEmpty } from "./ArrayService"
+import { FileBrowserResponse, FileCache } from "../types"
 
 export function isSuccess(res: FileBrowserResponse): Boolean
 {
@@ -22,3 +16,12 @@ export function isFailure(res: FileBrowserResponse): Boolean
 {
     return !isSuccess(res)
 }
+
+export function convertToFileCache(res: FileBrowserResponse): FileCache[]
+{
+
+
+    return []
+}
+
+
