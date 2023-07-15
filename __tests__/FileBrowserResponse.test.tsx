@@ -15,7 +15,7 @@ function test_isSuccess_validSingleResponse()
         size: 1,
     }] as DocumentPickerResponse[]
 
-    let browserResponse = { response: pickerResponse, error: undefined, isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: pickerResponse, error: undefined, isCancelled: undefined } as FileBrowserResponse
     let res = isSuccess(browserResponse)
     let expected = true
 
@@ -51,7 +51,7 @@ function test_isSuccess_validMultitpleResponse()
         size: 1,
     }] as DocumentPickerResponse[]
 
-    let browserResponse = { response: pickerResponse, error: undefined, isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: pickerResponse, error: undefined, isCancelled: undefined } as FileBrowserResponse
     let res = isSuccess(browserResponse)
     let expected = true
 
@@ -62,7 +62,7 @@ function test_isSuccess_validMultitpleResponse()
 
 function test_isSuccess_allUndefined()
 {
-    let browserResponse = { response: undefined, error: undefined, isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: undefined, error: undefined, isCancelled: undefined } as FileBrowserResponse
     let res = isSuccess(browserResponse)
     let expected = false
 
@@ -82,7 +82,7 @@ function test_isSuccess_errorAndResponse()
         size: 1,
     }] as DocumentPickerResponse[]
 
-    let browserResponse = { response: pickerResponse, error: Error('TEST ERROR'), isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: pickerResponse, error: Error('TEST ERROR'), isCancelled: undefined } as FileBrowserResponse
     let res = isSuccess(browserResponse)
     let expected = false
 
@@ -102,7 +102,7 @@ function test_isFailure_errorAndResponse()
         size: 1,
     }] as DocumentPickerResponse[]
 
-    let browserResponse = { response: pickerResponse, error: Error('TEST ERROR'), isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: pickerResponse, error: Error('TEST ERROR'), isCancelled: undefined } as FileBrowserResponse
     let res = isFailure(browserResponse)
     let expected = true
 
@@ -113,7 +113,7 @@ function test_isFailure_errorAndResponse()
 
 function test_isFailure_errorOnly()
 {
-    let browserResponse = { response: undefined, error: undefined, isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: undefined, error: undefined, isCancelled: undefined } as FileBrowserResponse
     let res = isFailure(browserResponse)
     let expected = true
 
