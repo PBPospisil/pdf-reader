@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { Routes } from "./routes"
-import { isSuccess } from "../services/FileBrowserService"
-import { browseFile } from "../services/FileBrowser"
+import { browseFile, isSuccess } from "../services/FileBrowserService"
 import { useSelector } from "react-redux"
 import { FileBrowserResponse } from '../types'
 import { RootState } from "../../app/store"
