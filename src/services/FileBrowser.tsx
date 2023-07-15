@@ -1,4 +1,4 @@
-import { FileBrowserResponse } from '../model/FileBrowserResponse'
+import { FileBrowserResponse } from "../types"
 import { pickDocument, isCancelled } from './DocumentPickerService'
 
 export type UNEXPECTED_EXECUTION_FLOW_ERROR = {}

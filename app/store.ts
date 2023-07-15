@@ -1,9 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
 import ShelfReducer from "../src/features/shelf/ShelfSlice"
+import FileBrowserSlice from "../src/features/files/FileBrowserSlice"
 
 const store = configureStore({
     reducer: {
-        shelf: ShelfReducer
+        shelf: ShelfReducer,
+        fileBrowser: FileBrowserSlice
     }    
 })
 

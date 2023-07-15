@@ -1,6 +1,7 @@
 import 'react-native';
 import { expect, test } from '@jest/globals';
-import { isSuccess, isFailure, FileBrowserResponse } from '../src/model/FileBrowserResponse';
+import { isSuccess, isFailure } from '../src/services/FileBrowserService';
+import { FileBrowserResponse } from "../src/types"
 import { DocumentPickerResponse } from 'react-native-document-picker';
 
 function test_isSuccess_validSingleResponse()
