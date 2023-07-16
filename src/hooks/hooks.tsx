@@ -7,6 +7,6 @@ type DispatchFunc = () => AppDispatch
 export const useAppDispatch: DispatchFunc = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
-export const useBooks = (): Book[] => {
-    return useAppSelector((state) => { return state.library.books })
+export const useBooks = () => {
+    return useAppSelector((state) => { state.library?.books })
 } 
