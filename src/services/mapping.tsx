@@ -1,15 +1,12 @@
 import { DocumentPickerResponse } from "react-native-document-picker";
-import { FileCache } from "../types";
+import { Book, FileCache } from "../types";
 
-export function convertToFileCache(responses?: DocumentPickerResponse[]): FileCache[]
-{
-    if(responses !== undefined) {
-        return responses.map(mapDocumentPickerToFileCache)
-    }
-    return []
-}
-
-function mapDocumentPickerToFileCache(response: DocumentPickerResponse): FileCache
+export function mapDocumentPickerToFileCache(response: DocumentPickerResponse): FileCache
 {
     return { path: response.uri, name: response.name, type: response.type } as FileCache
+}
+
+export function mapFileCacheToBook(cache: FileCache): Book
+{
+    return { title: cache.name ? cache.name : '', path: cache.path, fileType: cache.type }
 }

@@ -1,12 +1,12 @@
 import { configureStore, ThunkDispatch, Action } from "@reduxjs/toolkit"
-import ShelfReducer from "../src/features/shelf/ShelfSlice"
+import LibraryReducer from "../src/features/library/LibrarySlice"
 import FileBrowserReducer from "../src/features/files/FileBrowserSlice"
 import { addBookToLibrary } from "../src/middleware/AddBookToLibrary"
 import { fetchFile } from "../src/middleware/FetchFile"
 
 const store = configureStore({
     reducer: {
-        shelf: ShelfReducer,
+        library: LibraryReducer,
         fileBrowser: FileBrowserReducer
     },
     middleware: (getDefaultMiddleware) =>

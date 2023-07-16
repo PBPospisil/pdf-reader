@@ -15,3 +15,12 @@ export type FileBrowserResponse = {
 export enum File {
     epub = 'book/epub'
 }
+
+export type Book = {
+    title: string;
+    cover?: string;
+    author?: string;
+    publicationDate?: Date;
+    path: string;
+    fileType?: string;
+}
