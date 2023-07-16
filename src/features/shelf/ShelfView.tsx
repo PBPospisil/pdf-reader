@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
-import { Book } from '../../types';
+import React from 'react'
 import { View, FlatList, Text } from "react-native"
-import { useBooks } from '../../hooks/hooks';
-import { BookView } from '../book/BookView';
+import store from '../../../app/store';
 
 const ShelfView = () => 
 {
-    const books: Book[] = useBooks()
+    const books = store.getState().library.books
     
     return (
         <View>
