@@ -6,7 +6,7 @@ export type UNEXPECTED_EXECUTION_FLOW_ERROR = {}
 
 export async function browseFile(): Promise<FileBrowserResponse>
 {
-    pickDocument()
+    await pickDocument()
         .then(function (success) {
             return { response: success, error: '', isCancelled: false } as FileBrowserResponse
         })

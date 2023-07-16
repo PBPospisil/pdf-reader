@@ -1,19 +1,18 @@
 import React from "react"
 import { Button, View } from "react-native"
-import { pickDocument } from "../services/DocumentPickerService"
-
-function handlePress()
-{
-    pickDocument()
-        .then(function (success) {
-            
-        })
-        .catch(function (error) {
-    
-        })
-}
+import { Routes } from "../middleware/routes"
+import { useAppDispatch } from "../hooks/hooks"
+import { addBookToLibrary } from "../middleware/AddBookToLibrary"
 
 const AddBookButton = () => {
+
+    const dispatch = useAppDispatch()
+
+    function handlePress()
+    {
+        dispatch(addBookToLibrary())
+    }
+
     return (
         <View>
             <Button 
