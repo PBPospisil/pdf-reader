@@ -1,11 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { Routes } from "./routes"
+import { fetchFile } from "./FetchFile"
 
-const addBookToLibrary = createAsyncThunk(
+export const addBookToLibrary = createAsyncThunk(
     Routes.AddBook,
     async (_, { dispatch }) => {
-        dispatch({ type: Routes.FetchFile })
-
-
+        await dispatch(fetchFile())
     }
 )
