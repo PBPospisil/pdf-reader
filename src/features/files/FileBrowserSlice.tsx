@@ -26,4 +26,5 @@ const fileBrowserSlice = createSlice({
     }
 })
 
+export const { addToBuffer } = fileBrowserSlice.actions;
 export default fileBrowserSlice.reducer
