@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import { View } from 'react-native'
-
-export type Book = {
-    title: string;
-    cover?: string;
-    author?: string;
-    publicationDate?: Date;
-}
+import { Book } from '../../types'
 
 interface BookProps {
     book: Book

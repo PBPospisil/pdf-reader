@@ -1,32 +1,13 @@
 import React, { useState } from 'react'
-import { Book } from '../book/BookView';
+import { Book } from '../../types';
 import { View, FlatList, Text } from "react-native"
+import { useBooks } from '../../hooks/hooks';
+import { BookView } from '../book/BookView';
 
-type Shelf = {
-    name?: string;
-    books?: Array<Book>;
-}
-
-interface ShelfProps {
-    shelf?: Shelf;
-}
-
-const addBookAction = (book: Book) => {
-    type: 'shelf/add-book'
-    payload: book
-}
-
-const addBook = (book: Book) => {
-    return {
-        type: 'shelf/add-book',
-        payload: book
-    }
-}
-
-const ShelfView = (props: ShelfProps) => 
+const ShelfView = () => 
 {
-    const [books, setBooks] = useState(props.shelf)
-
+    const books: Book[] = useBooks()
+    
     return (
         <View>
             <FlatList
