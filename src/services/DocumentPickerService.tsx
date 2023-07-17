@@ -1,4 +1,5 @@
 import DocumentPicker, { DocumentPickerResponse } from "react-native-document-picker"
+import { getEpubIdentifier } from "./PlatformSpecificHelper";
 
 export const pickDocument = async () =>
 {
@@ -6,6 +7,7 @@ export const pickDocument = async () =>
         try {
             const res: DocumentPickerResponse[] = await DocumentPicker.pick({
                 presentationStyle: 'fullScreen',
+                type: [getEpubIdentifier()],
             });
             resolve(res)
         } catch (error) {

@@ -24,3 +24,11 @@ export type Book = {
     path: string;
     fileType?: string;
 }
+
+export enum UTType {
+    epub = 'org.idpf.epub-container'
+}
+
+export enum MimeType {
+    epub = 'application/epub+zip'
+}
