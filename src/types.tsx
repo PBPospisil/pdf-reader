@@ -1,9 +1,9 @@
 import { DocumentPickerResponse } from "react-native-document-picker"
 
-export type FileCache = {
+export type File = {
     path: string,
     name?: string,
-    type: File
+    type: FileType
 }
 
 export type FileBrowserResponse = {
@@ -12,7 +12,7 @@ export type FileBrowserResponse = {
     isCancelled?: Boolean
 }
 
-export enum File {
+export enum FileType {
     epub = 'book/epub'
 }
 
