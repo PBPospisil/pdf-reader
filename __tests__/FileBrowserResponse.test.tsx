@@ -3,6 +3,7 @@ import { expect, test } from '@jest/globals';
 import { isSuccess, isFailure } from '../src/services/FileBrowserService';
 import { FileBrowserResponse } from "../src/types"
 import { DocumentPickerResponse } from 'react-native-document-picker';
+import { GenericError } from '../src/error/errors';
 
 function test_isSuccess_validSingleResponse()
 {
@@ -82,7 +83,7 @@ function test_isSuccess_errorAndResponse()
         size: 1,
     }] as DocumentPickerResponse[]
 
-    let browserResponse = { documents: pickerResponse, error: Error('TEST ERROR'), isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: pickerResponse, error: GenericError, isCancelled: undefined } as FileBrowserResponse
     let res = isSuccess(browserResponse)
     let expected = false
 
@@ -102,7 +103,7 @@ function test_isFailure_errorAndResponse()
         size: 1,
     }] as DocumentPickerResponse[]
 
-    let browserResponse = { documents: pickerResponse, error: Error('TEST ERROR'), isCancelled: undefined } as FileBrowserResponse
+    let browserResponse = { documents: pickerResponse, error: GenericError, isCancelled: undefined } as FileBrowserResponse
     let res = isFailure(browserResponse)
     let expected = true
 
