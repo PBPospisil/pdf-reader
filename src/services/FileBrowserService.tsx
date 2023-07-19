@@ -1,20 +1,22 @@
 import { isEmpty } from "./ArrayService"
-import { FileBrowserResponse } from "../types"
+import { File, FileBrowserResponse } from "../types"
 import { pickDocument, isCancelled } from './DocumentPickerService'
+import { NO_ERROR } from "../strings"
+import { GenericError, NoError } from "../error/errors"
 
 export type UNEXPECTED_EXECUTION_FLOW_ERROR = {}
 
-export const browseFile = async () =>
+export const browseFile = async (): Promise<FileBrowserResponse> =>
 {
-    const promise = new Promise(async (resolve, reject) => {
+    const promise = new Promise<FileBrowserResponse>(async (resolve, reject) => {
         await pickDocument()
             .then(function (success) {
-                resolve({ response: success, error: '', isCancelled: false } as FileBrowserResponse)
+                resolve({ response: success, error: NoError, isCancelled: false } as FileBrowserResponse)
             })
             .catch(function (error) {
                 if(!isCancelled(error)) {
                     // TODO: TOAST GENERIC ERROR MESSAGE
-                    reject({ response: [], error: error, isCancelled: false } as FileBrowserResponse)
+                    reject({ response: [], error: GenericError, isCancelled: false } as FileBrowserResponse)
                 }
             })
     })
@@ -23,9 +25,7 @@ export const browseFile = async () =>
 
 export function isSuccess(res: FileBrowserResponse): Boolean
 {
-    if(res.error !== undefined) {
-        return false
-    }
+    if(isFailure(res)) { return false }
     if(Array.isArray(res.documents) && !isEmpty(res.documents)) {
         return true
     }
@@ -34,5 +34,5 @@ export function isSuccess(res: FileBrowserResponse): Boolean
 
 export function isFailure(res: FileBrowserResponse): Boolean
 {
-    return !isSuccess(res)
+    return res.error === GenericError || (res.documents === undefined && res.error === undefined)
 }
