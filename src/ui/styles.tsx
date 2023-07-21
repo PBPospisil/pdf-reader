@@ -12,9 +12,22 @@ export const LibraryStyles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         alignSelf: 'center',
-        padding: 4
+        paddingTop: 16
     },
     body: {
-        flex: 9
+        flex: 16
+    }
+})
+
+export const ShelfStyles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    list: {
+        flex: 16,
+    },
+    bookButton: {
+        flex: 1,
+        justifyContent: 'center'
     }
 })
