@@ -1,8 +1,8 @@
 import React from "react"
 import { Button, View } from "react-native"
-import { Routes } from "../middleware/routes"
 import { useAppDispatch } from "../hooks/hooks"
 import { addBookToLibrary } from "../middleware/AddBookToLibrary"
+import { ShelfStyles } from "../ui/styles"
 
 const AddBookButton = () => {
 
@@ -14,7 +14,7 @@ const AddBookButton = () => {
     }
 
     return (
-        <View>
+        <View style={ShelfStyles.bookButton}>
             <Button 
                 title='+ Book' 
                 onPress={handlePress} 
