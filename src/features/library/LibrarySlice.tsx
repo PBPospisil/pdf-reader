@@ -14,7 +14,6 @@ const librarySlice = createSlice({
     reducers: {
         consume(state, { payload }) {
             state.books = [...state.books, ...convertToBooks(payload)]
-            state.books.push(payload)
         }
     }
 })
