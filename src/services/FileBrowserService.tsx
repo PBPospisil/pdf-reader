@@ -11,12 +11,12 @@ export const browseFile = async (): Promise<FileBrowserResponse> =>
     const promise = new Promise<FileBrowserResponse>(async (resolve, reject) => {
         await pickDocument()
             .then(function (success) {
-                resolve({ response: success, error: NoError, isCancelled: false } as FileBrowserResponse)
+                resolve({ documents: success, error: NoError, isCancelled: false } as FileBrowserResponse)
             })
             .catch(function (error) {
                 if(!isCancelled(error)) {
                     // TODO: TOAST GENERIC ERROR MESSAGE
-                    reject({ response: [], error: GenericError, isCancelled: false } as FileBrowserResponse)
+                    reject({ documents: [], error: GenericError, isCancelled: false } as FileBrowserResponse)
                 }
             })
     })
