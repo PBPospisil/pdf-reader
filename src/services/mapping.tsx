@@ -3,7 +3,7 @@ import { Book, File } from "../types";
 
 export function mapDocumentPickerToFileCache(response: DocumentPickerResponse): File
 {
-    return { path: response.uri, name: response.name, type: response.type } as File
+    return { path: response.fileCopyUri, name: response.name, type: response.type } as File
 }
 
 export function mapFileCacheToBook(cache: File): Book
