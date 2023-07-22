@@ -1,7 +1,7 @@
 import { jest } from "@jest/globals"
 import { expect, test } from "@jest/globals"
 import DocumentPicker from "react-native-document-picker"
-import { pickDocument } from "../src/services/DocumentPickerService"
+import { isCancelled, pickDocument } from "../src/services/DocumentPickerService"
 
 jest.mock("react-native-document-picker")
 
@@ -48,4 +48,20 @@ test('error encountered while picking document', async () =>
     jest.mocked(DocumentPicker).pick.mockRejectedValue(Error)
 
     return pickDocument().catch(error => expect(error).toBe(Error))
+})
+
+test('was not cancelled', async () =>
+{
+    const error = () => false
+    jest.mocked(DocumentPicker).isCancel.mockImplementation(error)
+
+    return expect(isCancelled(error)).toBe(false)
+})
+
+test('was cancelled', async () =>
+{
+    const error = () => true
+    jest.mocked(DocumentPicker).isCancel.mockImplementation(error)
+
+    return expect(isCancelled(error)).toBe(true)
 })
