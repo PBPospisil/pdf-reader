@@ -42,11 +42,12 @@ export function isFailure(res: FileBrowserResponse): Boolean
 
 export function encounteredCopyError(documentPickerResponses: DocumentPickerResponse[]): Boolean
 {
-    let copyError: Boolean = false
-    documentPickerResponses.forEach(response => {
-        copyError = hasCopyError(response)
-    })
-    return copyError
+    for(let response of documentPickerResponses) {
+        if(hasCopyError(response)) {
+            return true
+        }
+    }
+    return false
 }
 
 function hasCopyError(documentPickerResponse: DocumentPickerResponse): Boolean
