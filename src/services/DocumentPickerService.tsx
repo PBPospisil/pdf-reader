@@ -8,7 +8,8 @@ export const pickDocument = async () =>
             const res: DocumentPickerResponse[] = await DocumentPicker.pick({
                 presentationStyle: 'fullScreen',
                 type: [getEpubIdentifier()],
-                copyTo: "documentDirectory"
+                copyTo: "documentDirectory",
+                allowMultiSelection: false
             });
             resolve(res)
         } catch (error) {
