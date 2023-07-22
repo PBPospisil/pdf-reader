@@ -7,6 +7,9 @@
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
+import {NavigationContainer} from '@react-navigation/native'
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -64,14 +67,17 @@ function App(): JSX.Element {
     flex: 1
   };
 
+  const Stack = createNativeStackNavigator();
+
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <LibraryScreen></LibraryScreen>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+          <Stack.Screen
+            name='Library'
+            component={LibraryScreen}
+          />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
