@@ -8,7 +8,6 @@ import { Body } from '../components/Body'
 const LibraryScreen = () => {
     return (
         <View style={LibraryStyles.container}>
-            <Header title='Library'></Header>
             <Body 
                 style={LibraryStyles.body}
                 RenderItem={ShelfView}
