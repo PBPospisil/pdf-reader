@@ -29,5 +29,11 @@ export const ShelfStyles = StyleSheet.create({
     bookButton: {
         flex: 1,
         justifyContent: 'center'
+    },
+    bookViewOnPress: {
+        backgroundColor: 'whitesmoke'
+    },
+    bookViewDefault: {
+        backgroundColor: 'white'
     }
 })
