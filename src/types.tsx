@@ -3,7 +3,7 @@ import { DocumentPickerResponse } from "react-native-document-picker"
 export type File = {
     path: string,
     name?: string,
-    type: FileType
+    type: string
 }
 
 export type FileBrowserResponse = {
