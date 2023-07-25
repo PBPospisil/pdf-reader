@@ -1,7 +1,8 @@
 import React from 'react'
 import { Pressable, PressableStateCallbackType, Text, View } from 'react-native'
-import { Book } from '../../types'
+import { Book, RootStackParamList } from '../../types'
 import { ShelfStyles } from '../../ui/styles'
+import { useNavigation } from '@react-navigation/native'
 
 interface BookProps {
     book: Book
@@ -9,9 +10,11 @@ interface BookProps {
 
 export const BookView = (props: BookProps) =>
 {
+    const navigation: any = useNavigation<RootStackParamList>()
+
     return (
         <Pressable
-            onPress={() => {console.log("BOOKVIEW WAS PRESSED")}}
+            onPress={() => navigation.navigate("Reader")}
             style={(state: PressableStateCallbackType) => state.pressed ? ShelfStyles.bookViewOnPress : ShelfStyles.bookViewDefault}>
             <Text>{props.book.title}</Text>
         </Pressable>

@@ -28,6 +28,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import LibraryScreen from './src/pages/LibraryScreen';
+import { RootStackParamList } from './src/types';
+import ReaderScreen from './src/pages/ReaderScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -67,7 +69,7 @@ function App(): JSX.Element {
     flex: 1
   };
 
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
     <NavigationContainer>
@@ -75,6 +77,10 @@ function App(): JSX.Element {
           <Stack.Screen
             name='Library'
             component={LibraryScreen}
+          />
+          <Stack.Screen
+            name='Reader'
+            component={ReaderScreen}
           />
       </Stack.Navigator>
     </NavigationContainer>
