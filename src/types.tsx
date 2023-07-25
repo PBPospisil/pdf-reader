@@ -32,3 +32,8 @@ export enum UTType {
 export enum MimeType {
     epub = 'application/epub+zip'
 }
+
+export type RootStackParamList = {
+    Library: undefined;
+    Reader: undefined;
+};
