@@ -1,11 +1,24 @@
 import React from "react"
-import { SafeAreaView, useWindowDimensions } from 'react-native'
+import { View } from 'react-native'
+import { RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from "../types";
 
-const ReaderScreen = () => {
+type ReaderScreenNavigationProp = RouteProp<
+  RootStackParamList,
+  'Reader'
+>
+
+type Props = {
+    route: ReaderScreenNavigationProp;
+}
+
+const ReaderScreen = ({route}: Props) => {
+
+    const { fileType } = route.params
 
     return (
-        <SafeAreaView>
-        </SafeAreaView>
+        <View>
+        </View>
     )
 }
 
