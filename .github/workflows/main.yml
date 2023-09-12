@@ -4,6 +4,7 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
+      - run:  pwd
       - name: Download files from the current repository
         uses: actions/checkout@v2
       - name: Install Node.js
