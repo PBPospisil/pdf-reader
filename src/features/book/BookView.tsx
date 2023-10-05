@@ -14,7 +14,7 @@ export const BookView = (props: BookProps) =>
 
     return (
         <Pressable
-            onPress={() => navigation.navigate("Reader", { fileType: props.book.fileType })}
+            onPress={() => navigation.navigate("Reader", { book: props.book })}
             style={(state: PressableStateCallbackType) => state.pressed ? ShelfStyles.bookViewOnPress : ShelfStyles.bookViewDefault}>
             <Text>{props.book.title}</Text>
         </Pressable>

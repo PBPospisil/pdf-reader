@@ -2,6 +2,7 @@ import { expect, test } from "@jest/globals"
 import { convertToBooks, convertToFileCache } from "../src/services/ConversionService"
 import { Book, File } from "../src/types"
 import { DocumentPickerResponse } from "react-native-document-picker"
+import { FileType } from "../src/types"
 
 test('undefined input responses array', async () => {
     const responses = undefined
@@ -43,14 +44,14 @@ test('map single file to book', async () => {
         {
             path: 'file/copy/test/uri',
             name: 'test',
-            type: 'test/file'
+            type: 'test/pdf-file'
         }
     ]
     const expected = [
         { 
             title: 'test',
             path: 'file/copy/test/uri',
-            fileType: 'test/file'
+            fileType: FileType.pdf
         }
     ]
 
@@ -63,24 +64,34 @@ test('map multiple files to books', async () => {
         {
             path: 'file/copy/test/uri',
             name: 'test',
-            type: 'test/file'
+            type: 'test/epub-file'
         },
         { 
             path: 'file/copy/test/uri/1',
             name: 'test',
-            type: 'test/file-1'
+            type: 'test/pdf-file'
+        },
+        { 
+            path: 'file/copy/test/uri/2',
+            name: 'test',
+            type: 'test/file-unknown-type'
         }
     ]
     const expected = [
         { 
             title: 'test',
             path: 'file/copy/test/uri',
-            fileType: 'test/file'
+            fileType: FileType.epub
         },
         {
             title: 'test',
             path: 'file/copy/test/uri/1',
-            fileType: 'test/file-1'
+            fileType: FileType.pdf
+        },
+        {
+            title: 'test',
+            path: 'file/copy/test/uri/2',
+            fileType: FileType.unknown
         }
     ]
 

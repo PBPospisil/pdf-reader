@@ -14,7 +14,8 @@ export type FileBrowserResponse = {
 
 export enum FileType {
     epub = 'ebook/epub',
-    pdf = 'ebook/pdf'
+    pdf = 'ebook/pdf',
+    unknown = 'unknown'
 }
 
 export type Book = {
@@ -36,5 +37,5 @@ export enum MimeType {
 
 export type RootStackParamList = {
     Library: undefined;
-    Reader: { fileType: FileType };
+    Reader: { book: Book };
 };
