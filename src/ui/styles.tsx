@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet, Dimensions } from "react-native"
 
 export const LibraryStyles = StyleSheet.create({
     container: {
@@ -35,5 +35,16 @@ export const ShelfStyles = StyleSheet.create({
     },
     bookViewDefault: {
         backgroundColor: 'white'
+    }
+})
+
+export const PdfStyles = StyleSheet.create({
+    container: {
+        width: '100%',
+        height: '100%'
+    },
+    pdf: {
+        flex:1,
+        width: Dimensions.get('window').width,
     }
 })
