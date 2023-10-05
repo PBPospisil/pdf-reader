@@ -15,11 +15,11 @@ type Props = {
 
 const ReaderScreen = ({ route }: Props) =>
 {
-    const { fileType } = route.params
+    const { book } = route.params
 
     return (
         <View>
-            <EbookReader fileType={ fileType }/>
+            <EbookReader book={ book }/>
         </View>
     )
 }
