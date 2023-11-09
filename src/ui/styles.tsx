@@ -31,10 +31,31 @@ export const ShelfStyles = StyleSheet.create({
         justifyContent: 'center'
     },
     bookViewOnPress: {
-        backgroundColor: 'whitesmoke'
+        backgroundColor: 'whitesmoke',
+        width: '100%',
+        height: 64,
+        padding: 16,
+        justifyContent: 'center',
+        borderColor: 'black',
+        borderWidth: 0.5
     },
     bookViewDefault: {
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        width: '100%',
+        height: 64,
+        padding: 16,
+        justifyContent: 'center',
+        borderColor: 'black',
+        borderTopWidth: 0.5,
+        borderBottomWidth: 0.25
+    },
+    bookTitleText: {
+        color: 'black',
+        fontSize: 20
+    },
+    bookSizeText: {
+        color: 'black',
+        fontSize: 8
     }
 })
 
