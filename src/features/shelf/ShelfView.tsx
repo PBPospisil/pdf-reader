@@ -18,7 +18,8 @@ const renderItem = ({ item }: itemProps) => {
             author: item.author,
             publicationDate: item.publicationDate,
             path: item.path,
-            fileType: item.fileType
+            fileType: item.fileType,
+            size: item.size
         }}
         />
     )
