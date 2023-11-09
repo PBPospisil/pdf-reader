@@ -3,7 +3,8 @@ import { DocumentPickerResponse } from "react-native-document-picker"
 export type File = {
     path: string,
     name?: string,
-    type: string
+    type: string,
+    size?: number
 }
 
 export type FileBrowserResponse = {
@@ -25,6 +26,7 @@ export type Book = {
     publicationDate?: Date;
     path: string;
     fileType?: FileType;
+    size?: number;
 }
 
 export enum UTType {
