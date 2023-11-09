@@ -27,7 +27,7 @@ test('map single response to file cache', async () => {
         type: 'test/file',
         size: 0
     }]
-    const expected: File[] = [{ path: 'file/copy/test/uri', name: 'test', type: 'test/file' }]
+    const expected: File[] = [{ path: 'file/copy/test/uri', name: 'test', type: 'test/file', size: 0 }]
 
     expect(convertToFileCache(responses)).toStrictEqual(expected)
 })
@@ -51,7 +51,8 @@ test('map single file to book', async () => {
         { 
             title: 'test',
             path: 'file/copy/test/uri',
-            fileType: FileType.pdf
+            fileType: FileType.pdf,
+            size: undefined
         }
     ]
 
@@ -81,17 +82,20 @@ test('map multiple files to books', async () => {
         { 
             title: 'test',
             path: 'file/copy/test/uri',
-            fileType: FileType.epub
+            fileType: FileType.epub,
+            size: undefined
         },
         {
             title: 'test',
             path: 'file/copy/test/uri/1',
-            fileType: FileType.pdf
+            fileType: FileType.pdf,
+            size: undefined
         },
         {
             title: 'test',
             path: 'file/copy/test/uri/2',
-            fileType: FileType.unknown
+            fileType: FileType.unknown,
+            size: undefined
         }
     ]
 

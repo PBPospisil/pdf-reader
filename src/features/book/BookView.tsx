@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pressable, PressableStateCallbackType, Text, View } from 'react-native'
+import { Image, Pressable, PressableStateCallbackType, Text, View } from 'react-native'
 import { Book, RootStackParamList } from '../../types'
 import { ShelfStyles } from '../../ui/styles'
 import { useNavigation } from '@react-navigation/native'
@@ -12,11 +12,17 @@ export const BookView = (props: BookProps) =>
 {
     const navigation: any = useNavigation<RootStackParamList>()
 
+    const PressableStateStyle = (state: PressableStateCallbackType) =>
+    {
+        return state.pressed ? ShelfStyles.bookViewOnPress : ShelfStyles.bookViewDefault
+    }
+
     return (
         <Pressable
             onPress={() => navigation.navigate("Reader", { book: props.book })}
-            style={(state: PressableStateCallbackType) => state.pressed ? ShelfStyles.bookViewOnPress : ShelfStyles.bookViewDefault}>
-            <Text>{props.book.title}</Text>
+            style={(state: PressableStateCallbackType) => PressableStateStyle(state)}>
+            <Text style={ShelfStyles.bookTitleText}>{props.book.title}</Text>
+            <Text style={ShelfStyles.bookSizeText}></Text>
         </Pressable>
     )
 }
