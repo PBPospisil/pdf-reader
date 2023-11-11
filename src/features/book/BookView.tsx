@@ -1,8 +1,9 @@
 import React from 'react'
-import { Image, Pressable, PressableStateCallbackType, Text, View } from 'react-native'
+import { Pressable, PressableStateCallbackType, Text } from 'react-native'
 import { Book, RootStackParamList } from '../../types'
 import { ShelfStyles } from '../../ui/styles'
 import { useNavigation } from '@react-navigation/native'
+import { PdfMetaDataView } from '../../components/PdfMetaDataView'
 
 interface BookProps {
     book: Book
@@ -22,7 +23,7 @@ export const BookView = (props: BookProps) =>
             onPress={() => navigation.navigate("Reader", { book: props.book })}
             style={(state: PressableStateCallbackType) => PressableStateStyle(state)}>
             <Text style={ShelfStyles.bookTitleText}>{props.book.title}</Text>
-            <Text style={ShelfStyles.bookSizeText}></Text>
+            <PdfMetaDataView pdfSize={props.book.size}></PdfMetaDataView>
         </Pressable>
     )
 }

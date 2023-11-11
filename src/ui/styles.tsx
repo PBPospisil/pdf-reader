@@ -40,22 +40,42 @@ export const ShelfStyles = StyleSheet.create({
         borderWidth: 0.5
     },
     bookViewDefault: {
-        backgroundColor: 'white',
+        backgroundColor: 'mintcream',
         width: '100%',
         height: 64,
         padding: 16,
+        paddingLeft: 32,
         justifyContent: 'center',
         borderColor: 'black',
         borderTopWidth: 0.5,
-        borderBottomWidth: 0.25
+        borderBottomWidth: 0.25,
+        
     },
     bookTitleText: {
         color: 'black',
-        fontSize: 20
+        fontSize: 20,
+        fontWeight: "600"
+    }
+})
+
+export const PdfMetaDataStyles = StyleSheet.create({
+    container: {
+        flexDirection: 'row'
     },
     bookSizeText: {
         color: 'black',
-        fontSize: 8
+        fontSize: 12,
+        fontWeight: "400"
+    },
+    metaDataSeparator: {
+        color: 'black',
+        fontSize: 12,
+        fontWeight: "400"
+    },
+    pdfAddedDate: {
+        color: 'black',
+        fontSize: 12,
+        fontWeight: "400"
     }
 })
 
