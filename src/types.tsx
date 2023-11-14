@@ -38,7 +38,7 @@ export enum MimeType {
 }
 
 export type RootStackParamList = {
-    Library: undefined;
+    Documents: undefined;
     Reader: { book: Book };
 };
 

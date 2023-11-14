@@ -3,7 +3,6 @@ import { Book } from '../../types'
 import { View, FlatList } from "react-native"
 import { useBooks } from '../../hooks/hooks'
 import { BookView } from '../book/BookView'
-import AddBookButton from '../../components/AddBookButton'
 import { ShelfStyles } from '../../ui/styles'
 
 interface itemProps {
@@ -36,7 +35,6 @@ const ShelfView = () => {
                     renderItem={renderItem}
                 />
             </View>
-            <AddBookButton></AddBookButton>
         </View>
     )
 }

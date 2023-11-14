@@ -30,6 +30,7 @@ import {
 import LibraryScreen from './src/pages/LibraryScreen';
 import { RootStackParamList } from './src/types';
 import ReaderScreen from './src/pages/ReaderScreen';
+import AddBookButton from './src/components/AddBookButton';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -75,12 +76,31 @@ function App(): JSX.Element {
     <NavigationContainer>
       <Stack.Navigator>
           <Stack.Screen
-            name='Library'
+            name='Documents'
             component={LibraryScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: 'dimgrey'
+              },
+              headerTitleStyle: {
+                color: 'aliceblue',
+              },
+              headerRight: (() => (
+                <AddBookButton></AddBookButton>
+              ))
+            }}
           />
           <Stack.Screen
             name='Reader'
             component={ReaderScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: 'dimgrey'
+              },
+              headerTitleStyle: {
+                color: 'aliceblue',
+              },
+            }}
           />
       </Stack.Navigator>
     </NavigationContainer>
