@@ -1,10 +1,8 @@
-export const parseDate = (withDate: string) =>
+export const parseDate = (withDate: Date) =>
 {
-    let rawMonthDayYear = withDate.split(' ').slice(1, 4)
-    let monthDayYear: string = ''
+    let day = withDate.getDate()
+    let month = withDate.getMonth() + 1
+    let year = withDate.getFullYear()
 
-    rawMonthDayYear.forEach((element: string) => {
-        monthDayYear = `${monthDayYear} ${element}`
-    })
-    return monthDayYear.trim()
+    return `${day}-${month}-${year}`
 }
