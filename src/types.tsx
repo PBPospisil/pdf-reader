@@ -41,3 +41,10 @@ export type RootStackParamList = {
     Library: undefined;
     Reader: { book: Book };
 };
+
+export enum FileSizeRange {
+    Bytes = 'B',
+    Kilobytes = 'KB',
+    Megabytes = 'MB',
+    Gigabytes = 'GB'
+}
