@@ -1,8 +1,9 @@
 import React from "react"
-import { Button, View } from "react-native"
+import { Image, Pressable } from "react-native"
 import { useAppDispatch } from "../hooks/hooks"
 import { addBookToLibrary } from "../middleware/AddBookToLibrary"
-import { ShelfStyles } from "../ui/styles"
+import { AddBookStyles, ShelfStyles } from "../ui/styles"
+import { ADD_BOOK_ICON } from "../image"
 
 const AddBookButton = () => {
 
@@ -14,13 +15,13 @@ const AddBookButton = () => {
     }
 
     return (
-        <View style={ShelfStyles.bookButton}>
-            <Button 
-                title='+ Book' 
-                onPress={handlePress} 
-                color='black'
+        <Pressable 
+            onPress={handlePress}>
+            <Image 
+                source={ADD_BOOK_ICON}
+                style={AddBookStyles.image}
             />
-        </View>
+        </Pressable>
         
     )
 }
