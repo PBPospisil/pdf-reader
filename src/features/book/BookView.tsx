@@ -9,6 +9,8 @@ interface BookProps {
     book: Book
 }
 
+const SINGLE_LINE = 1
+
 export const BookView = (props: BookProps) =>
 {
     const navigation: any = useNavigation<RootStackParamList>()
@@ -22,7 +24,11 @@ export const BookView = (props: BookProps) =>
         <Pressable
             onPress={() => navigation.navigate("Reader", { book: props.book })}
             style={(state: PressableStateCallbackType) => PressableStateStyle(state)}>
-            <Text style={ShelfStyles.bookTitleText}>{props.book.title}</Text>
+            <Text 
+                style={ShelfStyles.bookTitleText}
+                numberOfLines={SINGLE_LINE}>
+                    {props.book.title}
+            </Text>
             <PdfMetaDataView pdfSize={props.book.size}></PdfMetaDataView>
         </Pressable>
     )

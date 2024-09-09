@@ -28,7 +28,7 @@ export const ShelfStyles = StyleSheet.create({
         flex: 16,
     },
     bookViewOnPress: {
-        backgroundColor: 'darkgrey',
+        backgroundColor: 'grey',
         width: '100%',
         height: 64,
         padding: 16,
@@ -39,7 +39,7 @@ export const ShelfStyles = StyleSheet.create({
         borderBottomWidth: 0.25,
     },
     bookViewDefault: {
-        backgroundColor: 'grey',
+        backgroundColor: 'darkgrey',
         width: '100%',
         height: 64,
         padding: 16,
