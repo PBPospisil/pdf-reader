@@ -1,13 +1,17 @@
-import React, { useState } from "react"
-import { View } from "react-native" 
+import React from "react"
+import { ToastAndroid, View } from "react-native" 
 import { PdfStyles } from "../ui/styles"
 import Pdf from 'react-native-pdf'
 import { Book } from "../types"
 
-var RNFS = require('react-native-fs');
-
 type PdfReaderProps = {
     book: Book,
+}
+
+const errorToast = () => {
+    ToastAndroid.showWithGravity('An error occurred.',
+    ToastAndroid.SHORT,
+    ToastAndroid.BOTTOM);
 }
 
 const PdfReader = (props: PdfReaderProps) =>
@@ -19,19 +23,7 @@ const PdfReader = (props: PdfReaderProps) =>
             <Pdf
                 style={PdfStyles.pdf}
                 source={source}
-                onLoadComplete={(numberOfPages,filePath) => {
-                    console.log(`Number of pages: ${numberOfPages}`);
-                }}
-                onPageChanged={(page,numberOfPages) => {
-                    console.log(`Current page: ${page}`);
-                }}
-                onError={(error) => {
-                    console.log('error: ' + error);
-                }}
-                onPressLink={(uri) => {
-                    console.log(`Link pressed: ${uri}`);
-                }}
-                onLoadProgress={(progress) => {console.log('progress: ' + progress)}}/>
+                onError={() => { errorToast() }}/>
         </View>
     )
 }
